@@ -13,12 +13,21 @@ public class Turno {
 
     private int numeroTurno;
     private String intervaloMinutos;
+    private Nivel nivel;
 
-    public Turno(int numeroturno, String intervalominutos) {
-        this.numeroTurno = numeroturno;
-        this.intervaloMinutos = intervalominutos;
+    public Turno(int numeroTurno, String intervaloMinutos) {
+        this.numeroTurno = numeroTurno;
+        this.intervaloMinutos = intervaloMinutos;
     }
 
+    public Turno(int numeroturno, String intervalominutos, Nivel nivel) {
+        this.numeroTurno = numeroturno;
+        this.intervaloMinutos = intervalominutos;
+        this.nivel = nivel;
+    }
+    
+    
+    
     public int getNumeroTurno() {
         return numeroTurno;
     }
@@ -29,7 +38,8 @@ public class Turno {
 
     @Override
     public String toString() {
-        return "Turno{" + "numeroturno=" + numeroTurno + ", intervalominutos=" + intervaloMinutos + '}';
+        return "\n►Turno" + "#" + numeroTurno + "  " + intervaloMinutos + " "+ nivel;
     }
-
+    
+  
 }

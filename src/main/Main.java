@@ -8,14 +8,16 @@ package main;
 import java.util.Date;
 import java.util.Scanner;
 import modelo.*;
+
 /**
  *
  * @author Favio
  */
+
 public class Main {
+
     public static void main(String[] args) {
-        
-        
+
         Scanner teclado = new Scanner(System.in);
 
         //TODO LO QUE SE ESTA ELABORANDO HASTA AHORA ES TEMPORAL Y ESTA SUJETA A CAMBIOS, SOLO ES PARA PROBAR EL PROGRAMA 
@@ -33,19 +35,21 @@ public class Main {
         //Se crea el sistema
         //..............
         Sistema sistema;
-        
+
         //Se crean las clases que necesita el sistema, las cuales son: 
         ArregloFecha fechasSistema;
         ArregloTurno turnosSistema;
         ArregloAlumnos alumnosRegistrados;
         ArregloCabeceras ticketsdetodoelsist;
+        
         fechasSistema = new ArregloFecha();
         turnosSistema = new ArregloTurno();
         alumnosRegistrados = new ArregloAlumnos(3); //3 para probar el sistema
-  
+        
+
         Operario operarioregistradounico; //Este operario sera el que este registrado de momento
         operarioregistradounico = new Operario(fechatest, "contraop", "nombreop", "appelidoop", "codigoop");
-        
+
         Alumno alumnoadd;//Esta clase alumnoadd sera para añadir los alumnos al arreglo de alumnos, que esta dentro de la clase sistema 
 
         alumnoadd = new Alumno(1111, "correo1", "contra1", "nombres1", "apellidos1", "codigo1", facultadtest);
@@ -59,7 +63,7 @@ public class Main {
 
         //Terminamos de crear el sistema
         sistema = new Sistema(true, fechasSistema, turnosSistema, alumnosRegistrados, operarioregistradounico);
-        
+
         System.out.println("------------------------------------------------------------------------------------------------");
         System.out.println("\tLos alumnos que tiene el sistema son:\n" + alumnosRegistrados);
         System.out.println("************************************************************************************************");
@@ -71,14 +75,16 @@ public class Main {
         ticketstempcreados = null;
         
         
+        //Creamos los turnos por defecto
+        sistema.crearturnospordefect();
         //Menu para seleccionar si se trata de un usuario o un operario
         int op1;
-
+        
         do {
 
             System.out.println("\tEscoja una Opción");
             System.out.println(" 1.- Acceder como Alumno\n 2.- Acceder como Operario\n 3.- Salir del Sistema");
-            
+
             op1 = teclado.nextInt();
 
             switch (op1) {
@@ -95,7 +101,7 @@ public class Main {
 
                     if (sistema.validarlogdeoperario(codigo, contraseña) == true) {
 
-                        System.out.println("Usted es un operario, y si esta registrado");
+                        System.out.println("Esta registrado");
                         int op2;
                         Operario operariotest;
                         operariotest = operarioregistradounico;
@@ -133,21 +139,21 @@ public class Main {
 
                                 case 2:
                                     String codigoval;
-                                    
+
                                     System.out.println("Ingrese el codigo del alumno a validar");
                                     teclado.nextLine();
-                                    codigoval = teclado.nextLine(); 
-                                    
+                                    codigoval = teclado.nextLine();
+
                                     operariotest.validarticketop(codigoval, sistema.getTicketscreadosconfecha());
-                                    
+
                                     break;
                                 case 3:
                                     int newrac;
-                                    System.out.println("Las raciones por turnos son: "+Sistema.racionestotalesporturno);
+                                    System.out.println("Las raciones por turnos son: " + Sistema.racionestotalesporturno);
                                     System.out.println("Digite las nuevas raciones por turno:");
-                                    
+
                                     newrac = teclado.nextInt();
-                                    
+                                    Sistema.setRacionestotalesporturno(newrac);
                                     break;
                                 case 4:
                                     Fecha fechagenerada;
@@ -199,9 +205,7 @@ public class Main {
                                 case 5:
                                     System.out.println("Los alumnos que tiene el sistema son\n" + alumnosRegistrados);
                                     break;
-                                case 0:
 
-                                    break;
                                 case 6:
                                     System.out.println(sistema.getTicketscreadosconfecha());
                                     break;
@@ -243,19 +247,15 @@ public class Main {
                         System.out.println("El alumno es: ");
                         System.out.println(alumnotest);
                         do {
-                            
 
                             System.out.println("\n0.-Cerrar sesion y volver al menu principal\n1.-Solicitar ticket\n2.-Cambiar contraseña\n3.-Mostrar sus datos"
-                                    + "\n4.-Mostrar los tickets");
+                                    + "\n4.-Mostrar los tickets\n5.-Mostrar los turnos del dia");
                             opa = teclado.nextInt();
-
-                          
 
                             switch (opa) {  //Menu del alumno
                                 case 1:
 
                                     sistema.asignarTicket(alumnotest);
-                                    
 
                                     break;
                                 case 2:
@@ -273,6 +273,11 @@ public class Main {
                                 case 4:
                                     System.out.println(sistema.getTicketscreadosconfecha());
                                     break;
+                                case 5:
+                                    System.out.println("Los turnos son:");
+                                    System.out.println(sistema.getTurnosSistema());
+                                    
+                                    break;
                                 case 0:
 
                                     break;
@@ -287,6 +292,5 @@ public class Main {
             }
 
         } while (op1 != 3);
- }
+    }
 }
-

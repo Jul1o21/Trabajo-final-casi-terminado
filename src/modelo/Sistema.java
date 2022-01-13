@@ -51,6 +51,10 @@ public class Sistema {
         return racionestotalesporturno;
     }
 
+    public ArregloCabeceras getTicketscreadosconfecha() {
+        return cabecerascreadasconfecha;
+    }
+
     public void asignarTicket(Alumno alumno) {
         if (this.cabecerascreadasconfecha.asignarTicketCabeceras(alumno) == true) {
             System.out.println("Se le asigno correctamente un ticket al alumno");
@@ -60,8 +64,8 @@ public class Sistema {
 
     }
 
-    public ArregloCabeceras getTicketscreadosconfecha() {
-        return cabecerascreadasconfecha;
+    public void setTurnosSistema(ArregloTurno turnosSistema) {
+        this.turnosSistema = turnosSistema;
     }
 
     public void setEstadohabilitado(boolean estadohabilitado) {
@@ -80,5 +84,30 @@ public class Sistema {
         }
 
         return result;
+    }
+
+    public void crearturnospordefect() {
+        ArregloTurno turnos;
+        Turno turnotemp;
+        turnos = new ArregloTurno();
+        turnotemp = new Turno(1, "12:00-12:30", new Nivel(1));
+        turnos.agregarTurno(turnotemp);
+        turnotemp = new Turno(2, "12:30-13:00", new Nivel(1));
+        turnos.agregarTurno(turnotemp);
+        turnotemp = new Turno(3, "13:00-13:30", new Nivel(1));
+        turnos.agregarTurno(turnotemp);
+        turnotemp = new Turno(4, "13:30-14:00", new Nivel(1));
+        turnos.agregarTurno(turnotemp);
+        turnotemp = new Turno(1, "12:00-12:30", new Nivel(2));
+        turnos.agregarTurno(turnotemp);
+        turnotemp = new Turno(2, "12:30-13:00", new Nivel(2));
+        turnos.agregarTurno(turnotemp);
+        turnotemp = new Turno(3, "13:00-13:30", new Nivel(2));
+        turnos.agregarTurno(turnotemp);
+        turnotemp = new Turno(4, "13:30-14:00", new Nivel(2));
+        turnos.agregarTurno(turnotemp);
+        
+        setTurnosSistema(turnos);
+        
     }
 }

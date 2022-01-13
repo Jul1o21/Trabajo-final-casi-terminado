@@ -28,7 +28,7 @@ public class ArregloAlumnos {
     public boolean agregarAlumno(Alumno alumno) {
         boolean result = false;
         if (verificarRepetidos(alumno.getCodigo()) == false) {
-
+            System.out.println("El indice es:" +this.indice);
             Alumno TempAlumnos[];
             TempAlumnos = new Alumno[this.indice + 1];
 

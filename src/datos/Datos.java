@@ -11,6 +11,7 @@ import modelo.Usuario;
  */
 public class Datos {
    public static Usuario  operario  = new Operario("contraop", "codigoop");
+   
    public static Usuario  alumno = new Alumno("contra1", "codigo1");
    public static TipoFacultadArreglo arreglotipofacultad  = new TipoFacultadArreglo();
 }

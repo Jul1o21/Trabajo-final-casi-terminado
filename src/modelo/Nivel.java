@@ -14,6 +14,6 @@ public class Nivel {
 
     @Override
     public String toString() {
-        return "Nivel{" + "tiponivel=" + numeronivel + '}';
+        return "Nivel:" + " " + numeronivel + '}';
     }
 }
