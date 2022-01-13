@@ -86,10 +86,6 @@ public class ArregloAlumnos {
         return result;
     }
 
-    public void incrementartamañoarreglo() {
-
-    }
-
     @Override
     public String toString() {
         return "\n" + "\tAlumnos que pertenecen al arreglo" + "\n" + Arrays.toString(AlumnoA) + "\nNumero total de alumnos: " + indice;
