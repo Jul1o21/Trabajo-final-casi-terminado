@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class ArregloCabeceras {
 
-     private int indice;
+    private int indice;
     private CabeceraTicket[] cabeceras;
 
     public ArregloCabeceras() {
@@ -36,19 +36,19 @@ public class ArregloCabeceras {
     }
 
     public boolean asignarTicketCabeceras(Alumno alumno) {
-        boolean result=false;
+        boolean result = false;
         if (this.cabeceras == null) {
             System.out.println("NO HAY TICKETS DISPONIBLES EN EL SISTEMA");
 
         } else {
-           boolean verificar=false;
+            boolean verificar = false;
             for (int i = 0; i < Sistema.turnospordia; i++) {
-                if(this.cabeceras[i]!=null&&verificar==false){
-                    result=this.cabeceras[i].asignarticketalumno(alumno);
-                   
-                    verificar=true;
+                if (this.cabeceras[i] != null && verificar == false) {
+                    result = this.cabeceras[i].asignarticketalumno(alumno);
+
+                    verificar = true;
                 }
-                
+
             }
 
         }

@@ -30,7 +30,7 @@ public class JFrameOperario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAccederSistemaOp = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
@@ -58,9 +58,14 @@ public class JFrameOperario extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("SansSerif", 2, 14)); // NOI18N
         jButton1.setText("Validar Ticket");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setFont(new java.awt.Font("SansSerif", 2, 14)); // NOI18N
-        jButton2.setText("AgregarAlumno");
+        btnAccederSistemaOp.setFont(new java.awt.Font("SansSerif", 2, 14)); // NOI18N
+        btnAccederSistemaOp.setText("Acceder al Sistema");
 
         jButton3.setFont(new java.awt.Font("SansSerif", 2, 14)); // NOI18N
         jButton3.setText("Cambiar Raciones");
@@ -81,9 +86,9 @@ public class JFrameOperario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jButton1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
+                    .addComponent(btnAccederSistemaOp)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(jButton4)))
@@ -96,7 +101,7 @@ public class JFrameOperario extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnAccederSistemaOp))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
@@ -106,6 +111,10 @@ public class JFrameOperario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,8 +152,8 @@ public class JFrameOperario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAccederSistemaOp;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
