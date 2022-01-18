@@ -24,15 +24,21 @@ public class ControladorAlumno {
         this.vista.jButtonSolicitarContraseña.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               vista.dispose();
-               JFrameSolicitarContraseña contraseña = new JFrameSolicitarContraseña();
-               contraseña.setVisible(true);
+            
+               
+               vista.setVisible(true);
+               iniciarAlumno();
             }
         });
         
         
     }
-        
+    
+   private void reabrir(){
+       JFrameSolicitarContraseña contraseña = new JFrameSolicitarContraseña();
+      
+   }
+    
     public void iniciarAlumno(){
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);

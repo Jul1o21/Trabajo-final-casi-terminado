@@ -78,6 +78,9 @@ public class ControladorSolicitarContraseña {
         
     }
     
-    
+    public void iniciar_vista(){
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+    }
     
 }
